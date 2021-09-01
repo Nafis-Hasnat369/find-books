@@ -18,7 +18,7 @@ const searchBook = async () => {
     if (searchText === "") {
         const div = document.createElement('div');
         div.classList.add("mx-auto");
-        div.innerHTML = "<h5>Please write to search...</h5>";
+        div.innerHTML = "<h5>Please input something to search...</h5>";
         searchResult.appendChild(div);
     }
     else {
