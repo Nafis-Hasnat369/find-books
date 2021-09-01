@@ -18,7 +18,7 @@ const searchBook = async () => {
     if (searchText === "") {
         const div = document.createElement('div');
         div.classList.add("mx-auto");
-        div.innerHTML = "<h5>Please input something to search...</h5>";
+        div.innerHTML = "<h5>Please type something to search...</h5>";
         searchResult.appendChild(div);
     }
     else {
@@ -39,7 +39,7 @@ const displaySearchResult = books => {
     if (books.docs.length == "0") {
         const div = document.createElement('div');
         div.classList.add("mx-auto");
-        div.innerHTML = "<h5>No results found, try different keywords!</h5>";
+        div.innerHTML = "<h5>No results found, try different keywords please!</h5>";
         searchResult.appendChild(div);
         loadAnimation("none");
     }
@@ -61,14 +61,14 @@ const displaySearchResult = books => {
 
             // display total result
             const totalResult = document.getElementById("total-result");
-            totalResult.innerHTML = `<h3>Total search result: <span class="text-primary">${books.numFound}</span></h3>`;
+            totalResult.innerHTML = `<h3 class="py-3">Total search result found: <span class="text-primary">${books.numFound}</span></h3>`;
             loadAnimation("none");
         })
     }
 };
 
 // load animation
-const loadAnimation = view => {
-    document.getElementById("animation").style.display = view;
+const loadAnimation = status => {
+    document.getElementById("animation").style.display = status;
 };
 loadAnimation("none");
